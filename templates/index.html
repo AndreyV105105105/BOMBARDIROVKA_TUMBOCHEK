@@ -1,12 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' )}}">
+    <title>Document</title>
 </head>
 <body>
-
-  <p>Name: {{ name }}</p>
-
+<form method="POST" action="/reg_run">
+    <input class="email" name="email" placeholder="Введите адрес" />
+    <button id="create_img">ок</button>
+</form>
+<button id="module">местоположениe исследовательских модулей</button>
+<button id="station">расположениe базовых станций</button>
+<button id="station_area">расположениe базовых станций с визуализацией области их покрытия</button>
+<p>количества используемых базовых станций первого типа: </p>
+<p>количества затраченных байткоинов для станций первого типа: </p>
+<p>количества используемых базовых станций второго типа: </p>
+<p>количества затраченных байткоинов для станций второго типа:</p>
+<script>
+    document.getElementById('create_img').addEventListener('click', function() {
+    var l = document.createElement('img');
+    l.src = "{{ url_for('static', filename='img/main.jpg') }}";
+    document.body.appendChild(l);
+});
+</script>
+<script>
+    document.getElementById('module').addEventListener('click', function() {
+    var l = document.createElement('img');
+    l.src = "{{ url_for('static', filename='img/main.jpg') }}";
+    document.body.appendChild(l);
+});
+</script>
+<script>
+    document.getElementById('station').addEventListener('click', function() {
+    var l = document.createElement('img');
+    l.src = "{{ url_for('static', filename='img/main.jpg') }}";
+    document.body.appendChild(l);
+});
+</script>
+<script>
+    document.getElementById('station_area').addEventListener('click', function() {
+    var l = document.createElement('img');
+    l.src = "{{ url_for('static', filename='img/main.jpg') }}";
+    document.body.appendChild(l);
+});
+</script>
 </body>
 </html>

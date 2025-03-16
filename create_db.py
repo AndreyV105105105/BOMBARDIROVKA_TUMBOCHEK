@@ -25,26 +25,11 @@ class DatabaseManager:
             raise Exception("Нет подключения к БД. Сначала нужно вызвать connect()")
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS products (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                product_name TEXT NOT NULL,
-                product_type TEXT NOT NULL,
-                manufacture_date DATE NOT NULL,
-                expiry_date DATE NOT NULL,
-                number REAL NOT NULL,
-                quantity REAL NOT NULL,
-                unit TEXT NOT NULL,
-                nutrition_info TEXT,
-                measurement_type TEXT NOT NULL,
-                added_history TEXT,
-                removed_history TEXT
+                href INTEGER PRIMARY KEY AUTOINCREMENT,
+                full TEXT NOT NULL,
+                modul TEXT NOT NULL,
+                base DATE NOT NULL,
+                base_rad DATE NOT NULL
             )
         """)
-        self.cursor.execute("""
-          CREATE TABLE IF NOT EXISTS shopping_list (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            product_name TEXT NOT NULL,
-            quantity INTEGER NOT NULL,
-            added_at DATETIME DEFAULT CURRENT_TIMESTAMP
-           )
-       """)
         self.conn.commit()
