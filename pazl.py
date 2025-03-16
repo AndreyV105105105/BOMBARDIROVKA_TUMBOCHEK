@@ -110,18 +110,19 @@ for e in sl:
             itu.append(sl[e][0])
         answer4.append([sl['lda'][0], *itu, sl['rda'][0]])
     if e == 'l':
-        itu = []
+        itu1 = []
+        itu2 = []
         f = 1
         for i in range(64):
             if abs(sl['lua'][0][-1][i] - sl[e][0][0][i]) > mxr:
-                itu.append(sl[e][0])
-                itu.append(sl[e][1])
+                itu1.append(sl[e][0])
+                itu2.append(sl[e][1])
                 f = 0
                 break
         if f:
-            itu.append(sl[e][1])
-            itu.append(sl[e][0])
-        answer2.append([*itu[0], [sl['n'][2]], [sl['n'][3]], *itu[1]])
+            itu1.append(sl[e][1])
+            itu2.append(sl[e][0])
+        answer2.append([*itu1, [sl['n'][2]], [sl['n'][3]], *itu2])
     if e == 'r':
         itu1 = []
         itu2 = []
@@ -136,3 +137,7 @@ for e in sl:
             itu1.append(sl[e][1])
             itu2.append(sl[e][0])
         answer3.append([*itu1, [sl['n'][0]], [sl['n'][1]], *itu2])
+
+for e in answer3[0]:
+    print(e)
+    print()
