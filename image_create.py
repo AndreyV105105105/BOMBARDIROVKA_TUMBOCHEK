@@ -13,7 +13,7 @@ img2 = Image.open('modul.jpg')
 
 ans = []
 while len(ans) < 16:
-    response = get("https://olimp.miet.ru/ppo_it/api")
+    response = get("https://olimp.miet.ru/ppo_it/api?status=jury")
     a = response.json()['message']['data']
     if a not in ans:
         ans.append(a)
@@ -27,7 +27,7 @@ price = a['price']
 ans = np.array(ans)
 
 ans = ans.reshape((4, 4, 64, 64))
-
+print(len(ans[0][0][0][0]))
 with Image.open('main.jpg') as img:
     draw = ImageDraw.Draw(img)
     for u in range(4):
