@@ -23,7 +23,6 @@ def bfs(y_start, x_start, y_end, x_end, len_mtx=64):
     return -1
 
 def find_al_vertex(img):
-    """Находит все вершины на плоскости картинки"""
     r = []
     for mtx in img:
         res = np.array([np.array([0]*64) for _ in range(64)])
@@ -93,5 +92,5 @@ def find_al_vertex(img):
                         mtx[i][j] >= mtx[i][j+1],
                             ]):
                         res[i][j] = mtx[i][j]
-        return np.array(r)
-    r.append(res)
+        r.append(res)
+    return np.array(r)
