@@ -12,9 +12,7 @@ def otsort(s1="https://olimp.miet.ru/ppo_it/api", s2="https://olimp.miet.ru/ppo_
     sender = a['sender']
     listener = a['listener']
     price = a['price']
-
     sl = {'u': [], 'd': [], 'l': [], 'r': [], 'n': [], 'lua': [], 'rua': [], 'lda': [], 'rda': []}
-    k = 0
     for i in range(len(ans)):
         if ans[i][0] == [255] * 64:
             fr = 1
@@ -59,8 +57,6 @@ def otsort(s1="https://olimp.miet.ru/ppo_it/api", s2="https://olimp.miet.ru/ppo_
             else:
                 sl['n'].append(ans[i])
     return sl
-
-
 sl = otsort()
 ans1 = 0
 mxr = 255
@@ -125,7 +121,7 @@ for e in sl:
         if f:
             itu.append(sl[e][1])
             itu.append(sl[e][0])
-        answer2.append([*itu[0], [], [], *itu[1]])
+        answer2.append([*itu[0], [sl['n'][2]], [sl['n'][3]], *itu[1]])
     if e == 'r':
         itu1 = []
         itu2 = []
@@ -139,6 +135,4 @@ for e in sl:
         if f:
             itu1.append(sl[e][1])
             itu2.append(sl[e][0])
-        answer3.append([*itu1, [], [], *itu2])
-
-
+        answer3.append([*itu1, [sl['n'][0]], [sl['n'][1]], *itu2])
