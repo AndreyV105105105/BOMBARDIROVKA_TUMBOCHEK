@@ -27,7 +27,6 @@ price = a['price']
 ans = np.array(ans)
 
 ans = ans.reshape((4, 4, 64, 64))
-print(len(ans[0][0][0][0]))
 with Image.open('main.jpg') as img:
     draw = ImageDraw.Draw(img)
     for u in range(4):
