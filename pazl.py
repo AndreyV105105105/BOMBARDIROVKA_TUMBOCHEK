@@ -137,7 +137,3 @@ for e in sl:
             itu1.append(sl[e][1])
             itu2.append(sl[e][0])
         answer3.append([*itu1, [sl['n'][0]], [sl['n'][1]], *itu2])
-
-for e in answer3[0]:
-    print(e)
-    print()
